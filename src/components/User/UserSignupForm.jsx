@@ -85,7 +85,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
             value={values.avatar}
             autoComplete="off"
             onChange={handleChange}
-            minLength={10}
+            required
           />
         </div>
 
