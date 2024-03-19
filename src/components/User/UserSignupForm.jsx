@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { createUser } from "../../features/user/userSlice";
 
 import styles from "../../styles/User.module.css";
+import { type } from "@testing-library/user-event/dist/type";
 
 const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
   const dispatch = useDispatch();
@@ -71,6 +72,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
             value={values.password}
             autoComplete="off"
             onChange={handleChange}
+            minLength={4}
             required
           />
         </div>
@@ -78,12 +80,12 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
         <div className={styles.group}>
           <input
             type="avatar"
-            placeholder="Your avatar(must be Url)"
+            placeholder="Your avatar (must be Url)"
             name="avatar"
             value={values.avatar}
             autoComplete="off"
             onChange={handleChange}
-            required
+            minLength={10}
           />
         </div>
 
